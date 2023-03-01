@@ -57,6 +57,7 @@ public class LoginPage {
 	}
 	@RequestMapping(value="/logincheck",method=RequestMethod.POST)
 	public ModelAndView checkuser(@RequestParam("name") String name,@RequestParam("pwd") String pwd,HttpServletRequest request) {	
+		System.out.println("this login check method");
 		HttpSession session = request.getSession();
 		User usr=dao.checkUser(name, pwd);
 		session.setAttribute("user", usr);
